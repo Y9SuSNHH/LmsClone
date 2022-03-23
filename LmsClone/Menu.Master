@@ -39,7 +39,9 @@
     <form id="form1" runat="server">
         <div id="div-all">
             <div id="div-left">
-                <asp:Button ID="Button1" runat="server" Text="Đăng xuất" OnClick="SignoutClick"/>
+                <asp:Button ID="btnUser" CssClass="btnMenu"  runat="server" Text="Tài khoản" OnClick="UserClick"/>
+                <br />
+                <asp:Button ID="btnSignout" CssClas="btnMenu"  runat="server" Text="Đăng xuất" OnClick="SignoutClick"/>
             </div>
             <div id="div-right">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

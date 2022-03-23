@@ -12,8 +12,7 @@ namespace LmsClone
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            if (Session["username"] != "")
+            if (Session["login"] == "true")
             {
                 Response.Redirect("Index.aspx");
             }
@@ -38,7 +37,7 @@ namespace LmsClone
                     if (array[i].Username == username && array[i].Password == password)
                     {
                         //Tạo session
-                        //Session["login"] = "1";
+                        Session["login"] = "true";
                         Session["username"] = array[i].Username;
                         Session["name"] = array[i].Name;
                         Session["email"] = array[i].Email;
