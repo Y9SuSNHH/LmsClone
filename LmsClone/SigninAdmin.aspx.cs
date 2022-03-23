@@ -8,19 +8,19 @@ using LmsClone.Model;
 
 namespace LmsClone
 {
-    public partial class Signin : System.Web.UI.Page
+    public partial class SigninAdmin : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["loginstudent"] == "true")
+            if (Session["loginadmin"] == "true")
             {
                 Response.Redirect("Index.aspx");
             }
         }
         protected void SigninClick(object sender, EventArgs e)
         {
-            string path = Server.MapPath("~/Data/Student.xml");
-            List<StudentObject> array = Student.GetListStudent(path);
+            string path = Server.MapPath("~/Data/Admin.xml");
+            List<AdminObject> array = Admin.GetListAdmin(path);
 
 
             string username = Request.Form["username"];
@@ -37,8 +37,8 @@ namespace LmsClone
                     if (array[i].Username == username && array[i].Password == password)
                     {
                         //Tạo session
-                        Session["loginstudent"] = "true";
-                        Session["loginadmin"] = "";
+                        Session["loginadmin"] = "true";
+                        Session["loginstudent"] = "";
                         Session["name"] = array[i].Name;
                         Session["username"] = array[i].Username;
                         Session["email"] = array[i].Email;
@@ -48,7 +48,7 @@ namespace LmsClone
                     {
                         Response.Write("<script> alert('Tài khoản không hợp lệ! Mời nhập lại.'); </script>");
                     }
-                }   
+                }
             }
         }
     }

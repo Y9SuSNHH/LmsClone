@@ -11,18 +11,10 @@ namespace LmsClone
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["login"] == "false")
+            if (String.IsNullOrEmpty((string)Session["loginstudent"]) && String.IsNullOrEmpty((string)Session["loginadmin"]))
             {
                 Response.Redirect("Signin.aspx");
             }
-        }
-        protected void SignoutClick(object sender, EventArgs e)
-        {
-            Session["login"] = "false";
-            Session["username"] = "";
-            Session["name"] = "";
-            Session["email"] = "";
-            Response.Redirect("Signin.aspx");
         }
         protected void UserClick(object sender, EventArgs e)
         {

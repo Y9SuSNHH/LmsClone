@@ -15,22 +15,29 @@
 
         #div-all {
             width: 100%;
-            height: 500px;
+            height: 1000px;
+            background-color:red;
         }
 
         #div-left {
-            width: 20%;
+            width: 15%;
             height: 100%;
             float:left;
-            background-color:black;
+            position:fixed;
+            background-color:gray;
+        }
+        .imgLogo{
+            width:100%;
+            height:10%;
         }
 
         #div-right {
-            width: 80%;
+            width: 85%;
             height: 100%;
-            float:left;
-            background-color:red;
+            float:right;
+            background-color:green;
         }
+
     </style>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -39,9 +46,11 @@
     <form id="form1" runat="server">
         <div id="div-all">
             <div id="div-left">
-                <asp:Button ID="btnUser" CssClass="btnMenu"  runat="server" Text="Tài khoản" OnClick="UserClick"/>
+                <a href="Index.aspx">
+                    <img class="imgLogo" src="https://th.bing.com/th/id/R.f69c8ce95d97243bc3f0c5d3438f1a45?rik=wa%2fXVkeO2TW9EQ&pid=ImgRaw&r=0" alt="LmsClone LOGO" />
+                </a>
                 <br />
-                <asp:Button ID="btnSignout" CssClas="btnMenu"  runat="server" Text="Đăng xuất" OnClick="SignoutClick"/>
+                <asp:Button ID="btnUser" CssClass="btnMenu"  runat="server" Text="Tài khoản" OnClick="UserClick"/>
             </div>
             <div id="div-right">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

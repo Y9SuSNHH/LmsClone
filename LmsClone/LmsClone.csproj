@@ -67,10 +67,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\Admin.xml" />
     <Content Include="Data\Student.xml" />
     <Content Include="Index.aspx" />
     <Content Include="Signin.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="SigninAdmin.aspx" />
     <Content Include="Signup.aspx" />
     <Content Include="User.aspx" />
     <Content Include="Web.config" />
@@ -90,6 +92,8 @@
     <Compile Include="Menu.Master.designer.cs">
       <DependentUpon>Menu.Master</DependentUpon>
     </Compile>
+    <Compile Include="Model\Admin.cs" />
+    <Compile Include="Model\AdminObject.cs" />
     <Compile Include="Model\Student.cs" />
     <Compile Include="Model\StudentObject.cs" />
     <Compile Include="Signin.aspx.cs">
@@ -103,6 +107,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SigninAdmin.aspx.cs">
+      <DependentUpon>SigninAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SigninAdmin.aspx.designer.cs">
+      <DependentUpon>SigninAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Signup.aspx.cs">
       <DependentUpon>Signup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
