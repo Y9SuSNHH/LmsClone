@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Xml.Serialization;
 
-namespace LmsClone
+namespace LmsClone.Model
 {
     public class StudentObject
     {

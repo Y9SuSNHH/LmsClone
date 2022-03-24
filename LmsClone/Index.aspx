@@ -3,4 +3,8 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div>
+        <a href="Class.aspx">Thêm lớp học</a>
+        <%--<asp:Button ID="btnInsertClass" runat="server" Text="Thêm lớp học" OnClick="InsertClassClick" Visible="False" />--%>
+    </div>
 </asp:Content>

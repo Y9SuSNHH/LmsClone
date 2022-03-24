@@ -67,7 +67,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Class.aspx" />
     <Content Include="Data\Admin.xml" />
+    <Content Include="Data\Class.xml" />
     <Content Include="Data\Student.xml" />
     <Content Include="Index.aspx" />
     <Content Include="Signin.aspx" />
@@ -78,6 +80,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class.aspx.cs">
+      <DependentUpon>Class.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Class.aspx.designer.cs">
+      <DependentUpon>Class.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -94,6 +103,8 @@
     </Compile>
     <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\AdminObject.cs" />
+    <Compile Include="Model\Class.cs" />
+    <Compile Include="Model\ClassObject.cs" />
     <Compile Include="Model\Student.cs" />
     <Compile Include="Model\StudentObject.cs" />
     <Compile Include="Signin.aspx.cs">
