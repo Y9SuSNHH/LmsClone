@@ -10,12 +10,13 @@ namespace LmsClone.Model
     {
         private string id;
         private string name;
-        private string nameadmin;
+        private string usernameadmin;
         private string description;
-        
+        public ClassObject() { }
+
         public string Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
-        public string Nameadmin { get => nameadmin; set => nameadmin = value; }
+        public string Usernameadmin { get => usernameadmin; set => usernameadmin = value; }
         public string Description { get => description; set => description = value; }
 
     }

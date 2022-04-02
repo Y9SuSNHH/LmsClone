@@ -22,27 +22,5 @@ namespace LmsClone
             }
             inforEmail.Text = (string)Session["email"];
         }
-        protected void SignoutClick(object sender, EventArgs e)
-        {
-            Session["username"] = "";
-            Session["name"] = "";
-            Session["email"] = "";
-            if (Session["loginstudent"] == "true")
-            {
-                Session["loginstudent"] = "";
-                Session["loginadmin"] = "";
-                Response.Redirect("Signin.aspx");
-            }
-            else if (Session["loginadmin"] == "true")
-            {
-                Session["loginstudent"] = "";
-                Session["loginadmin"] = "";
-                Response.Redirect("SigninAdmin.aspx");
-            }
-            else
-            {
-                Response.Redirect("Signin.aspx");
-            }
-        }
     }
 }

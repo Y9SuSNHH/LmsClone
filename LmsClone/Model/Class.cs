@@ -11,7 +11,7 @@ namespace LmsClone.Model
     public class Class
     {
         //doc ds hoc sinh  file Class.xml
-        public static List<ClassObject> GetListClass(String path)
+        public static List<ClassObject> GetList(String path)
         {
             List<ClassObject> list;
             // Đọc file
@@ -24,10 +24,10 @@ namespace LmsClone.Model
         }
 
         // thêm hoc sinh
-        public static bool InsertClass(ClassObject member, String path)
+        public static bool Insert(ClassObject member, String path)
         {
             bool test = false;
-            List<ClassObject> array = GetListClass(path);
+            List<ClassObject> array = GetList(path);
             //List < User > list = new List<User>();
             foreach (ClassObject each in array)
             {

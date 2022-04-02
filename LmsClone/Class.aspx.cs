@@ -12,14 +12,13 @@ namespace LmsClone
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
         protected void InsertClassClick(object sender, EventArgs e)
         {
 
             string id= Request.Form["id"];
             string name= Request.Form["name"];
-            string nameadmin = (string)Session["name"];
+            string usernameadmin = (string)Session["username"];
             string description = Request.Form["description"];
 
             if (id == "" && name == "" && description == "")
@@ -32,15 +31,16 @@ namespace LmsClone
                 ClassObject each = new ClassObject();
                 each.Id = id;
                 each.Name = name;
-                each.Nameadmin = nameadmin;
+                each.Usernameadmin = usernameadmin;
                 each.Description = description;
 
                 string path = Server.MapPath("~/Data/Class.xml");
-                if (Model.Class.InsertClass(each, path))
+                if (Model.Class.Insert(each, path))
                 {
-                    //Response.Write("<script> var result = confirm('Đăng kí thành công vui lòng đăng nhập lại !!!');if (result){window.location='Dangnhap.aspx';}else{alert('ok!');} </script>");
-                    Response.Write("<script> alert('Thêm lớp thành công !!!');</script>");
-                    Response.Redirect("Index.aspx");
+                    Response.Write("<script> var result = confirm('Thêm lớp thành công !!!');" +
+                        "if (result){window.location='Class.aspx';}</script>");
+                    //Response.Write("<script> alert('Thêm lớp thành công !!!');</script>");
+                    //Response.Redirect("Index.aspx");
                 }
                 else
                 {

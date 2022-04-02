@@ -1,9 +1,15 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0"?>
 <ArrayOfClassObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <ClassObject>
-    <Id>1</Id>
-    <Name>Nguyễn Ngọc</Name>
-    <Nameadmin>Lập trình web</Nameadmin>
-    <Description>jasdijqowie</Description>
-  </ClassObject>
+	<ClassObject>
+		<Id>LTW-HKI-2020</Id>
+		<Name>Lập trình web</Name>
+		<Usernameadmin>gold_hoang</Usernameadmin>
+		<Description>Sáng T1</Description>
+	</ClassObject>
+	<ClassObject>
+		<Id>LTW-HKI-2020</Id>
+		<Name>Lập trình web</Name>
+		<Usernameadmin>gold_hung</Usernameadmin>
+		<Description>Sáng T2</Description>
+	</ClassObject>
 </ArrayOfClassObject>

@@ -71,6 +71,7 @@
     <Content Include="Data\Admin.xml" />
     <Content Include="Data\Class.xml" />
     <Content Include="Data\Student.xml" />
+    <Content Include="img\book.jpg" />
     <Content Include="Index.aspx" />
     <Content Include="Signin.aspx" />
     <Content Include="Global.asax" />

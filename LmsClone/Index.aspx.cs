@@ -12,16 +12,45 @@ namespace LmsClone
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if(Session["loginadmin"] == "true")
-            //{
-            //    btnInsertClass.Visible = true;
-            //}
+            bot_admin.Visible = false;
+            bot_student.Visible = false;
+            if (Session["loginadmin"] == "true")
+            {
+                bot_admin.Visible = true;
+                // lấy ds lớp học
+                String path = Server.MapPath("~/Data/Class.xml");
+                List<ClassObject> Class = Model.Class.GetList(path);
+                List<ClassObject> Classfilter = new List<ClassObject>();
 
+
+                foreach (Model.ClassObject each in Class)
+                {
+                    if (each.Usernameadmin.Equals(Session["username"]))
+                    {
+                        Classfilter.Add(each);
+                    }
+                }
+
+                ListViewClass1.DataSource = Classfilter;
+                ListViewClass1.DataBind();
+            }
+            else if (Session["loginstudent"] == "true")
+            {
+                bot_student.Visible = true;
+                String path = Server.MapPath("~/Data/Class.xml");
+                List<ClassObject> Class = Model.Class.GetList(path);
+                List<ClassObject> Classfilter = new List<ClassObject>();
+
+
+                foreach (Model.ClassObject each in Class)
+                {
+                    Classfilter.Add(each);
+                }
+
+                ListViewClass2.DataSource = Classfilter;
+                ListViewClass2.DataBind();
+            }
         }
 
-        //protected void InsertClassClick(object sender, EventArgs e)
-        //{
-        //    Response.Redirect("Class.aspx");
-        //}
     }
 }

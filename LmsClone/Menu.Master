@@ -1,58 +1,210 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Menu.master.cs" Inherits="LmsClone.Menu" %>
 
 <!DOCTYPE html>
-
 <html>
-<head runat="server">
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trang chủ</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <style>
         * {
-            padding: 0;
             margin: 0;
+            padding: 0;
             box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font: 300 14px/18px Roboto;
+        }
+
+        *,
+        :after,
+        :before {
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
         }
 
         #div-all {
             width: 100%;
-            height: 1000px;
-            background-color:red;
+            height: 800px;
         }
 
-        #div-left {
-            width: 15%;
-            height: 100%;
-            float:left;
-            position:fixed;
-            background-color:gray;
-        }
-        .imgLogo{
-            width:100%;
-            height:10%;
+        #top {
+            height: 15%;
+            margin: 0px 12.5% 0px 12.5%;
         }
 
-        #div-right {
-            width: 85%;
-            height: 100%;
-            float:right;
-            background-color:green;
+            #top > .logo {
+                height: 30%;
+                text-align: center;
+                font-weight: bold;
+                color: #484848;
+            }
+
+        .exo-menu {
+            width: 100%;
+            float: left;
+            position: relative;
+            background: #23364B;
         }
 
+            .exo-menu > li {
+                display: inline-block;
+                float: left;
+            }
+
+                .exo-menu > li > a {
+                    color: #ccc;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    border-right: 1px #365670 dotted;
+                }
+
+                    .exo-menu > li > a:hover,
+                    li.drop-down ul > li > a:hover {
+                        background: #009FE1;
+                        color: #fff;
+                    }
+
+            .exo-menu i {
+                float: left;
+                font-size: 18px;
+                margin-right: 6px;
+                line-height: 20px !important;
+            }
+
+        li.drop-down {
+            position: relative;
+        }
+
+            li.drop-down:before {
+                content: "\f103";
+                color: #fff;
+                font-family: FontAwesome;
+                font-style: normal;
+                display: inline;
+                position: absolute;
+                right: 6px;
+                top: 20px;
+                font-size: 14px;
+            }
+
+            li.drop-down > ul {
+                left: 0px;
+                min-width: 230px;
+            }
+
+        .drop-down-ul {
+            display: none;
+        }
+
+
+        li.drop-down > ul > li > a {
+            color: #fff;
+            display: block;
+            padding: 20px 22px;
+            text-decoration: none;
+            background-color: #365670;
+            border-bottom: 1px dotted #547787;
+        }
+
+        .drop-down-ul:hover,
+        li.drop-down > a:hover + .drop-down-ul {
+            display: block;
+        }
+        /*responsive*/
+        @media (min-width:767px) {
+            .exo-menu > li > a {
+                display: block;
+                padding: 20px 22px;
+            }
+
+            li.drop-down > ul {
+                position: absolute;
+            }
+        }
+
+        @media (max-width:767px) {
+
+            .exo-menu {
+                min-height: 58px;
+                background-color: #23364B;
+                width: 100%;
+            }
+
+                .exo-menu > li > a {
+                    width: 100%;
+                    display: none;
+                }
+
+                .exo-menu > li {
+                    width: 100%;
+                }
+
+            .display.exo-menu > li > a {
+                display: block;
+                padding: 20px 22px;
+            }
+
+            li.drop-down > ul {
+                position: relative;
+            }
+        }
+        /* CSS BOT*/
+        #bot {
+            height: 85%;
+            margin: 0px 12.5% 0px 12.5;
+            background-color: red;
+        }
     </style>
-    <asp:ContentPlaceHolder ID="head" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">   
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
         <div id="div-all">
-            <div id="div-left">
-                <a href="Index.aspx">
-                    <img class="imgLogo" src="https://th.bing.com/th/id/R.f69c8ce95d97243bc3f0c5d3438f1a45?rik=wa%2fXVkeO2TW9EQ&pid=ImgRaw&r=0" alt="LmsClone LOGO" />
-                </a>
-                <br />
-                <asp:Button ID="btnUser" CssClass="btnMenu"  runat="server" Text="Tài khoản" OnClick="UserClick"/>
+            <div id="top">
+                <div class="logo" style="margin-bottom: 2%;">
+                    <a style="color: #000; text-decoration: none; font-size: 300%;" href="#">
+                        <img style="width: 10%%; height: 100%;" src="https://th.bing.com/th/id/R.cbe2e5bbc18dfd5dc9eded58606493d0?rik=i7QwyQqe7bN6wA&pid=ImgRaw&r=0" alt="LOGO">
+                        LMS CLONE
+                    </a>
+                </div>
+                <ul class="exo-menu">
+                    <li class="index">
+                        <a href="Index.aspx">
+                            <i class="fa fa-home"></i>Trang chủ
+                        </a>
+                    </li>
+                    <li id="insert_class" runat="server">
+                        <a href="Class.aspx">
+                            <i class="fa fa-book"></i>Thêm lớp học
+                        </a>
+                    </li>
+                    <li class="drop-down">
+                        <a href="#">
+                            <i class="fa fa-user"></i>Tài khoản
+                        </a>
+                        <ul class="drop-down-ul animated fadeIn">
+                            <li><a href="User.aspx">Thông tin tài khoản</a></li>
+                            <li>
+                                <a onserverclick="SignoutClick" runat="server">Đăng xuất</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
             </div>
-            <div id="div-right">
+            <div id="bot">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
             </div>

@@ -1,15 +1,40 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Menu.Master" AutoEventWireup="true" CodeBehind="Class.aspx.cs" Inherits="LmsClone.Class" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+        #insert_class {
+            background: #009FE1;
+            color: #fff;
+        }
+
+        #form_insert_class {
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <form>
-            <p>Mã lớp</p>
-            <input type="text" name="id"/>
-            <p>Tên lớp</p>
-            <input type="text" name="name"/>
-            <p>Mô tả</p>
-            <input type="text" name="description"/>
+    <div>
+        <div id="form_insert_class" runat="server">
+            <form>
+                <br />
+                Mã lớp
             <br />
-            <asp:Button runat="server" OnClick="InsertClassClick" Text="Thêm lớp"/>
-        </form>
+                <input type="text" name="id">
+                <br />
+                Tên lớp
+            <br />
+                <br />
+                <input type="text" name="name">
+                <br />
+                Mô tả
+            <br />
+                <br />
+                <input type="text" name="description">
+                <br />
+                <asp:Button runat="server" OnClick="InsertClassClick" Text="Thêm lớp" />
+            </form>
+        </div>
+        <div>
+        </div>
+    </div>
 </asp:Content>
+
