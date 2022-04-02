@@ -8,29 +8,25 @@ using LmsClone.Model;
 
 namespace LmsClone.Model
 {
-    public class Class
+    public class Lesson
     {
-        //doc ds hoc sinh  file Class.xml
-        public static List<ClassObject> GetList(String path)
+        public static List<LessonObject> GetList(String path)
         {
-            List<ClassObject> list;
+            List<LessonObject> list;
             // Đọc file
-            XmlSerializer reader = new XmlSerializer(typeof(List<ClassObject>));
+            XmlSerializer reader = new XmlSerializer(typeof(List<LessonObject>));
             StreamReader file = new StreamReader(path);
-            list = (List<ClassObject>)reader.Deserialize(file);
+            list = (List<LessonObject>)reader.Deserialize(file);
             file.Close();
             return list;
-
         }
-
-        // thêm hoc sinh
-        public static bool Insert(ClassObject member, String path)
+        public static bool Insert(LessonObject member, String path)
         {
             bool test = false;
-            List<ClassObject> array = GetList(path);
-            foreach (ClassObject each in array)
+            List<LessonObject> array = GetList(path);
+            foreach (LessonObject each in array)
             {
-                if (each.Id == member.Id)
+                if (each.Id == member.Id && each.Idclass == member.Idclass)
                 {
                     test = true;
                     break;
@@ -39,7 +35,7 @@ namespace LmsClone.Model
             if (test == false)
             {
                 array.Add(member);
-                XmlSerializer writer = new XmlSerializer(typeof(List<ClassObject>));
+                XmlSerializer writer = new XmlSerializer(typeof(List<LessonObject>));
                 FileStream _file = File.Create(path);
                 writer.Serialize(_file, array);
                 _file.Close();
@@ -48,6 +44,5 @@ namespace LmsClone.Model
 
             return false;
         }
-
     }
 }

@@ -70,7 +70,9 @@
     <Content Include="Class.aspx" />
     <Content Include="Data\Admin.xml" />
     <Content Include="Data\Class.xml" />
+    <Content Include="Data\Lesson.xml" />
     <Content Include="Data\Student.xml" />
+    <Content Include="Detailclass.aspx" />
     <Content Include="img\book.jpg" />
     <Content Include="Index.aspx" />
     <Content Include="Signin.aspx" />
@@ -87,6 +89,13 @@
     </Compile>
     <Compile Include="Class.aspx.designer.cs">
       <DependentUpon>Class.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detailclass.aspx.cs">
+      <DependentUpon>Detailclass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detailclass.aspx.designer.cs">
+      <DependentUpon>Detailclass.aspx</DependentUpon>
     </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -106,6 +115,8 @@
     <Compile Include="Model\AdminObject.cs" />
     <Compile Include="Model\Class.cs" />
     <Compile Include="Model\ClassObject.cs" />
+    <Compile Include="Model\Lesson.cs" />
+    <Compile Include="Model\LessonObject.cs" />
     <Compile Include="Model\Student.cs" />
     <Compile Include="Model\StudentObject.cs" />
     <Compile Include="Signin.aspx.cs">

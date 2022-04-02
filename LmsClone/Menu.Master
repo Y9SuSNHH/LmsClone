@@ -15,6 +15,11 @@
             box-sizing: border-box;
         }
 
+        html {
+            width: 100%;
+            height: 800px;
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -160,37 +165,57 @@
             }
         }
         /* CSS BOT*/
+        #center {
+            height: 65%;
+            margin: 0px 12.5% 0px 12.5%;
+        }
+
         #bot {
-            height: 85%;
-            margin: 0px 12.5% 0px 12.5;
-            background-color: red;
+            width: 100%;
+            height: 20%;
+            background-color: gray;
+        }
+
+        .footer {
+            display: inline;
+            float: left;
+            margin: 1% 10% 10% 5%;
         }
     </style>
-    <asp:ContentPlaceHolder ID="head" runat="server">   
+    <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
         <div id="div-all">
             <div id="top">
-                <div class="logo" style="margin-bottom: 2%;">
+                <div class="logo" style="margin: 1% 1%;">
                     <a style="color: #000; text-decoration: none; font-size: 300%;" href="#">
                         <img style="width: 10%%; height: 100%;" src="https://th.bing.com/th/id/R.cbe2e5bbc18dfd5dc9eded58606493d0?rik=i7QwyQqe7bN6wA&pid=ImgRaw&r=0" alt="LOGO">
                         LMS CLONE
                     </a>
                 </div>
                 <ul class="exo-menu">
-                    <li class="index">
+                    <li id="index-menu">
                         <a href="Index.aspx">
                             <i class="fa fa-home"></i>Trang chủ
                         </a>
                     </li>
-                    <li id="insert_class" runat="server">
-                        <a href="Class.aspx">
-                            <i class="fa fa-book"></i>Thêm lớp học
+                    <li id="class_menu" runat="server" class="drop-down">
+                        <a href="#">
+                            <i class="fa fa-book"></i>Lớp học
                         </a>
+                        <ul class="drop-down-ul animated fadeIn">
+                            <li><a href="Class.aspx">Thêm lớp</a></li>
+                            <li>
+                                <a href="#">Sửa lớp</a>
+                            </li>
+                            <li>
+                                <a href="#">Xóa lớp</a>
+                            </li>
+                        </ul>
                     </li>
-                    <li class="drop-down">
+                    <li id="user-menu" class="drop-down">
                         <a href="#">
                             <i class="fa fa-user"></i>Tài khoản
                         </a>
@@ -204,12 +229,69 @@
 
                 </ul>
             </div>
-            <div id="bot">
+            <div id="center">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
+            <div id="bot">
+                <div class="left footer">
+                    <h3>About</h3>
+                    <br />
+                    <ul>
+                        <li><span><i class="fa fa-location-arrow"></i></span>
+                            <span>Trường ĐH Mở HN, Phố Nguyễn Hiền</span>
+                            <br />
+                            <span>P. Bách khoa, Q.Hai Bà Trưng, Hà Nội </span>
+
+                        </li>
+                        <li><span><i class="fa fa-phone"></i></span>
+                            <span>024.62974545 | 024.62974646</span>
+
+                        </li>
+                        <li><span><i class="fa fa-envelope"></i></span>
+                            <span>daotao@hou.edu.vn</span>
+
+                        </li>
+                    </ul>
+                </div>
+                <div class="mid footer">
+                    <h3>Copyright ©2021 All rights reserved</h3>
+                    <br />
+                    <ul>
+                        <li>
+                            <i class="fa fa-star"></i>
+                            <span>Nguyễn Huy Hùng</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-user"></i>
+                            <span>Nghiêm Bá Hưng</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-user"></i>
+                            <span>Cấn Duy Huy</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right footer">
+                    <h3>Connect</h3>
+                    <br />
+                    <pre><i class="fa fa-facebook"></i>   <i class="fa fa-instagram"></i>   <i class="fa fa-twitter"></i>   <i class="fa fa-youtube"></i></pre>
+                </div>
+            </div>
         </div>
     </form>
-
 </body>
+        <script type="text/javascript">
+            function ShowHide(el) {
+            var check = document.getElementById("check");
+            var hidden = document.getElementsByClassName("hidden");
+            for (var i = 0; i != hidden.length; i++) {
+                if (el.checked) {
+                    hidden[i].style.display = "block";
+                } else {
+                    hidden[i].style.display = "none";
+                }
+            }
+        }
+        </script>
 </html>

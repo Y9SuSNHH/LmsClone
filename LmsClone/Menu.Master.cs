@@ -11,14 +11,14 @@ namespace LmsClone
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            insert_class.Visible = false;
+            class_menu.Visible = false;
             if (String.IsNullOrEmpty((string)Session["loginstudent"]) && String.IsNullOrEmpty((string)Session["loginadmin"]))
             {
                 Response.Redirect("Signin.aspx");
             }
             if(!String.IsNullOrEmpty((string)Session["loginadmin"]))
             {
-                insert_class.Visible = true;
+                class_menu.Visible = true;
             }
         }
         protected void SignoutClick(object sender, EventArgs e)

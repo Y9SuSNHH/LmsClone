@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
-        #insert_class {
+        #class_menu {
             background: #009FE1;
             color: #fff;
         }

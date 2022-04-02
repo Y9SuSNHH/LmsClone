@@ -1,34 +1,30 @@
 ﻿<%@ Page Title="Trang chủ" Language="C#" MasterPageFile="~/Menu.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="LmsClone.Index" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
-        .index {
+        #index-menu {
             background: #009FE1;
             color: #fff;
         }
-            
-        #bot > .top {
-            width: 100%;
-            height: 20%;
-        }
 
-        #bot_admin {
+        #ContentPlaceHolder1_bot_admin {
             width: 80%;
-            height: 70%;
+            height: 90%;
             margin: 0 auto;
             margin-top: 2%;
-            padding: 20px;
+            padding: 3% 3% 5% 3%;
             border-top: solid 1px #e5e5e5;
             background-color: rgba(214,228,215,0.2);
             box-shadow: 0px 0px 15px 1px #d1d1d1;
             border-radius: 10px;
         }
 
-        #bot_student {
+        #ContentPlaceHolder1_bot_student {
             width: 80%;
-            height: 70%;
+            height: 90%;
             margin: 0 auto;
             margin-top: 2%;
-            padding: 20px;
+            padding: 3% 3% 5% 3%;
             border-top: solid 1px #e5e5e5;
             background-color: rgba(214,228,215,0.2);
             box-shadow: 0px 0px 15px 1px #d1d1d1;
@@ -38,9 +34,6 @@
         a {
             text-decoration: none;
             color: black;
-        }
-        h1{
-            margin: 2% 2%;
         }
 
         * {
@@ -73,8 +66,7 @@
 
     <div id="bot_admin" runat="server">
         <div style="width: 100%; text-align: center; height: 10%;">
-            <h1>Lớp học của bạn</h1>
-            <p>Danh sách lớp học do bạn quản lý.</p>
+            <h1>Danh sách lớp học do bạn quản lý.</h1>
         </div>
         <div style="width: 100%; height: 90%; margin-left: 3%;">
             <asp:ListView ID="ListViewClass1" runat="server">
@@ -89,7 +81,7 @@
                     </div>
                 </ItemTemplate>
             </asp:ListView>
-            <asp:XmlDataSource ID="XmlDataSource1" runat="server"></asp:XmlDataSource>
+            <asp:XmlDataSource ID="XmlClassAdmin" runat="server"></asp:XmlDataSource>
         </div>
     </div>
     <div id="bot_student" runat="server">
@@ -109,7 +101,7 @@
                     </div>
                 </ItemTemplate>
             </asp:ListView>
-            <asp:XmlDataSource ID="XmlDataSource2" runat="server"></asp:XmlDataSource>
+            <asp:XmlDataSource ID="XmlClassStudent" runat="server"></asp:XmlDataSource>
         </div>
     </div>
 </asp:Content>

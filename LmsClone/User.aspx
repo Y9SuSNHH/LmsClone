@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
-        .drop-down {
+        #user-menu {
             background: #009FE1;
             color: #fff;
         }

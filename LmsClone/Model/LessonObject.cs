@@ -6,17 +6,19 @@ using System.Xml.Serialization;
 
 namespace LmsClone.Model
 {
-    public class ClassObject
+    public class LessonObject
     {
+        private string idclass;
         private string id;
         private string name;
-        private string usernameadmin;
         private string description;
+        private string detail;
 
+        public string Idclass { get => idclass; set => idclass = value; }
         public string Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
-        public string Usernameadmin { get => usernameadmin; set => usernameadmin = value; }
         public string Description { get => description; set => description = value; }
+        public string Detail { get => detail; set => detail = value; }
 
     }
 }

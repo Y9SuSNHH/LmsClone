@@ -33,13 +33,13 @@ namespace LmsClone
         protected global::System.Web.UI.WebControls.ListView ListViewClass1;
 
         /// <summary>
-        /// XmlDataSource1 control.
+        /// XmlClassAdmin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.XmlDataSource XmlDataSource1;
+        protected global::System.Web.UI.WebControls.XmlDataSource XmlClassAdmin;
 
         /// <summary>
         /// bot_student control.
@@ -60,12 +60,12 @@ namespace LmsClone
         protected global::System.Web.UI.WebControls.ListView ListViewClass2;
 
         /// <summary>
-        /// XmlDataSource2 control.
+        /// XmlClassStudent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.XmlDataSource XmlDataSource2;
+        protected global::System.Web.UI.WebControls.XmlDataSource XmlClassStudent;
     }
 }
