@@ -21,7 +21,8 @@
             <p>Nhập lại mật khẩu</p>
             <input type="password" name="comfirm_password" value="" />
             <br />
-            <asp:Button runat="server" OnClick="SignupClick" Text="Đăng kí"/>
+            <button runat="server" onserverclick="SignupClick">Đăng kí</button>
+            <%--<asp:Button runat="server" OnClick="SignupClick" Text="Đăng kí"/>--%>
         </form>
     </div>
 </body>

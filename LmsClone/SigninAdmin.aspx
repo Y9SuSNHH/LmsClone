@@ -15,7 +15,8 @@
             <p>Mật khẩu</p>
             <input type="password" name="password" value="" />
             <br />
-            <asp:Button runat="server" OnClick="SigninClick" Text="Đăng nhập"/>
+            <button runat="server" onserverclick="SigninClick">Đăng nhập</button>
+            <%--<asp:Button runat="server" OnClick="SigninClick" Text="Đăng nhập"/>--%>
         </form>
     </div>
 </body>

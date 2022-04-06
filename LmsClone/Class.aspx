@@ -30,7 +30,8 @@
                 <br />
                 <input type="text" name="description">
                 <br />
-                <asp:Button runat="server" OnClick="InsertClassClick" Text="Thêm lớp" />
+                <button runat="server" onserverclick="InsertClassClick">Thêm lớp</button>
+                <%--<asp:Button runat="server" OnClick="InsertClassClick" Text="Thêm lớp" />--%>
             </form>
         </div>
         <div>

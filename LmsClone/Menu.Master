@@ -283,7 +283,6 @@
 </body>
         <script type="text/javascript">
             function ShowHide(el) {
-            var check = document.getElementById("check");
             var hidden = document.getElementsByClassName("hidden");
             for (var i = 0; i != hidden.length; i++) {
                 if (el.checked) {

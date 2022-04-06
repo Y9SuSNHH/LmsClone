@@ -19,7 +19,8 @@
         <input type="text" name="description" class="hidden">
         <label class="hidden">Nội dung</label>
         <input type="text" name="detail" class="hidden">
-        <asp:Button runat="server" OnClick="btnInserLesson" Text="Thêm bài học" class="hidden" />
+        <button runat="server" class="hidden" onserverclick="btnInserLesson">Thêm bài học</button>
+<%--        <asp:Button runat="server" OnClick="btnInserLesson" Text="Thêm bài học" class="hidden" />--%>
     </form>
     <div>
         <asp:ListView ID="ListViewLesson" runat="server">
