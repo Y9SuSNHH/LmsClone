@@ -15,7 +15,7 @@
         <input type="text" name="id" class="hidden">
         <label class="hidden">Tên bài học</label>
         <input type="text" name="name" class="hidden">
-        <label class="hidden">Mô tả</label>
+        <label class="hidden">Mô tả</label> 
         <input type="text" name="description" class="hidden">
         <label class="hidden">Nội dung</label>
         <input type="text" name="detail" class="hidden">
