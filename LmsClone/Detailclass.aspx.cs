@@ -62,8 +62,6 @@ namespace LmsClone
                 {
                     Response.Write("<script> var result = confirm('Thêm bài giảng thành công !!!');" +
                         "if (result){window.location='Detailclass.aspx?id="+ idclass + "';}</script>");
-                    //Response.Write("<script> alert('Thêm lớp thành công !!!');</script>");
-                    //Response.Redirect("Index.aspx");
                 }
                 else
                 {

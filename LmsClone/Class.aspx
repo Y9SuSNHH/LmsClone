@@ -13,7 +13,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
-        <div id="form_insert_class" runat="server">
+        <div id="form_insert_class">
             <form>
                 <br />
                 Mã lớp
