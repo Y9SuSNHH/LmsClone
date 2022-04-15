@@ -281,16 +281,4 @@
         </div>
     </form>
 </body>
-        <script type="text/javascript">
-            function ShowHide(el) {
-            var hidden = document.getElementsByClassName("hidden");
-            for (var i = 0; i != hidden.length; i++) {
-                if (el.checked) {
-                    hidden[i].style.display = "block";
-                } else {
-                    hidden[i].style.display = "none";
-                }
-            }
-        }
-        </script>
 </html>

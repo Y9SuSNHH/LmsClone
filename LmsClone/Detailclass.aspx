@@ -15,12 +15,12 @@
         <input type="text" name="id" class="hidden">
         <label class="hidden">Tên bài học</label>
         <input type="text" name="name" class="hidden">
-        <label class="hidden">Mô tả</label> 
+        <label class="hidden">Mô tả</label>
         <input type="text" name="description" class="hidden">
         <label class="hidden">Nội dung</label>
         <input type="text" name="detail" class="hidden">
         <button runat="server" class="hidden" onserverclick="btnInserLesson">Thêm bài học</button>
-<%--        <asp:Button runat="server" OnClick="btnInserLesson" Text="Thêm bài học" class="hidden" />--%>
+        <%--        <asp:Button runat="server" OnClick="btnInserLesson" Text="Thêm bài học" class="hidden" />--%>
     </form>
     <div>
         <asp:ListView ID="ListViewLesson" runat="server">
@@ -36,4 +36,16 @@
         </asp:ListView>
         <asp:XmlDataSource ID="XmlLesson" runat="server" DataFile="~/Data/Lesson.xml"></asp:XmlDataSource>
     </div>
+    <script type="text/javascript">
+        function ShowHide(el) {
+            var hidden = document.getElementsByClassName("hidden");
+            for (var i = 0; i != hidden.length; i++) {
+                if (el.checked) {
+                    hidden[i].style.display = "block";
+                } else {
+                    hidden[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 </asp:Content>
