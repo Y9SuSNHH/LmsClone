@@ -9,7 +9,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <input id="check" type="checkbox" onchange="ShowHide(this)" runat="server" />
-    <label class="hidden">Thêm bài học</label>
+    <label runat="server" id="txtcheck">Thêm bài học</label>
     <form>
         <label class="hidden">ID</label>
         <input type="text" name="id" class="hidden">

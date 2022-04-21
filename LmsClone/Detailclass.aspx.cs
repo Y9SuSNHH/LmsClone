@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -13,16 +15,17 @@ namespace LmsClone
         protected void Page_Load(object sender, EventArgs e)
         {
             check.Visible = false;
+            txtcheck.Visible = false;
             if (Session["loginadmin"] == "true")
             {
                 check.Visible = true;
+                txtcheck.Visible = true;
             }
-         
-            // lấy ds lớp học
+
+            //lấy ds lớp học
             String path = Server.MapPath("~/Data/Lesson.xml");
             List<LessonObject> Lesson = Model.Lesson.GetList(path);
             List<LessonObject> Lesssobfilter = new List<LessonObject>();
-
 
             foreach (Model.LessonObject each in Lesson)
             {
@@ -35,6 +38,32 @@ namespace LmsClone
             ListViewLesson.DataSource = Lesssobfilter;
             ListViewLesson.DataBind();
         }
+        //public string GetListLesson()
+        //{
+        //    String path = Server.MapPath("~/Data/Lesson.xml");
+        //    List<LessonObject> Lesson = Model.Lesson.GetList(path);
+        //    List<LessonObject> Lesssobfilter = new List<LessonObject>();
+
+        //    foreach (Model.LessonObject each in Lesson)
+        //    {
+        //        if (each.Idclass.Equals(Request.QueryString["id"]))
+        //        {
+        //            Lesssobfilter.Add(each);
+        //        }
+        //    }
+        //    StringBuilder sb = new StringBuilder();
+        //    sb.Append("<div class='each -class'>");
+        //    foreach (Model.LessonObject each in Lesssobfilter)
+        //    {
+
+        //        sb.AppendFormat($"<h5>{each.Name} : {each.Description}</h5>" +
+        //                        "<h5>Nội dung bài học</h5>" +
+        //                        $"<span>{each.Detail}</span>" +
+        //                        "-------------------------------------");
+        //    }
+        //    sb.Append("</div>");
+        //    return sb.ToString();
+        //}
         protected void btnInserLesson(object sender, EventArgs e)
         {
             string idclass = Request.QueryString["id"];
@@ -61,7 +90,7 @@ namespace LmsClone
                 if (Model.Lesson.Insert(each, path))
                 {
                     Response.Write("<script> var result = confirm('Thêm bài giảng thành công !!!');" +
-                        "if (result){window.location='Detailclass.aspx?id="+ idclass + "';}</script>");
+                        "if (result){window.location='Detailclass.aspx?id=" + idclass + "';}</script>");
                 }
                 else
                 {

@@ -14,11 +14,20 @@ namespace LmsClone.Model
         private string description;
         private string detail;
 
-        public string Idclass { get => idclass; set => idclass = value; }
-        public string Id { get => id; set => id = value; }
-        public string Name { get => name; set => name = value; }
-        public string Description { get => description; set => description = value; }
-        public string Detail { get => detail; set => detail = value; }
+        //public LessonObject(string idclass, string id, string name, string description, string detail)
+        //{
+        //    this.idclass = idclass;
+        //    this.id = id;
+        //    this.name = name;
+        //    this.description = description;
+        //    this.detail = detail;
+        //}
+
+        public string Idclass { get { return idclass; } set { idclass = value; } }
+        public string Id { get { return id; } set { id = value; } }
+        public string Name { get { return name; } set { name = value; } }
+        public string Description { get { return description; } set { description = value; } }
+        public string Detail { get { return detail; } set { detail = value; } }
 
     }
 }
