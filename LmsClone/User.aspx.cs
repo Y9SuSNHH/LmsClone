@@ -11,16 +11,21 @@ namespace LmsClone
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            inforUserName.Text = (string)Session["username"];
+        }
+        public void GetUser()
+        {
+            Response.Write("<h1>Thông tin cá nhân ...</h1> <br>");
             if (Session["loginadmin"] == "true")
             {
-                inforName.Text = "Giáo viên " + Session["name"];
+                Response.Write("<h5>Giáo viên: </h5>" + Session["name"]);
             }
             else if (Session["loginstudent"] == "true")
             {
-                inforName.Text = "Sinh viên " + Session["name"];
+                Response.Write("<h5>Sinh viên: </h5>" + Session["name"]);
             }
-            inforEmail.Text = (string)Session["email"];
+            Response.Write("<h5>Tài khoản: </h5>" + Session["username"]+
+                "<h5>Email: </h5>" + Session["email"] +
+                "<br>-------------------------------------");
         }
     }
 }

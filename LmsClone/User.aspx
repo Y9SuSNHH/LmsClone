@@ -9,13 +9,5 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    Thông tin cá nhân ...
-    <br />
-    <asp:Label ID="inforName" runat="server" Text=""></asp:Label>
-    <br />
-    Tài khoản: 
-    <asp:Label ID="inforUserName" runat="server" Text=""></asp:Label>
-    <br />
-    Email:    
-    <asp:Label ID="inforEmail" runat="server" Text=""></asp:Label>
+    <%GetUser(); %>
 </asp:Content>

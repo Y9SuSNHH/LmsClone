@@ -21,8 +21,9 @@ namespace LmsClone
                 check.Visible = true;
                 txtcheck.Visible = true;
             }
-
-            //lấy ds lớp học
+        }
+        public void GetListLesson()
+        {
             String path = Server.MapPath("~/Data/Lesson.xml");
             List<LessonObject> Lesson = Model.Lesson.GetList(path);
             List<LessonObject> Lesssobfilter = new List<LessonObject>();
@@ -34,36 +35,15 @@ namespace LmsClone
                     Lesssobfilter.Add(each);
                 }
             }
+            foreach (LessonObject each in Lesssobfilter)
+            {
+                Response.Write("<h5>" + each.Name + " : " + each.Description + "</h5>" +
+                               "<h5>Nội dung bài học</h5>" +
+                               "<span>" + each.Detail + "</span>"+
+                               "<br>-------------------------------------");
+            }
 
-            ListViewLesson.DataSource = Lesssobfilter;
-            ListViewLesson.DataBind();
         }
-        //public string GetListLesson()
-        //{
-        //    String path = Server.MapPath("~/Data/Lesson.xml");
-        //    List<LessonObject> Lesson = Model.Lesson.GetList(path);
-        //    List<LessonObject> Lesssobfilter = new List<LessonObject>();
-
-        //    foreach (Model.LessonObject each in Lesson)
-        //    {
-        //        if (each.Idclass.Equals(Request.QueryString["id"]))
-        //        {
-        //            Lesssobfilter.Add(each);
-        //        }
-        //    }
-        //    StringBuilder sb = new StringBuilder();
-        //    sb.Append("<div class='each -class'>");
-        //    foreach (Model.LessonObject each in Lesssobfilter)
-        //    {
-
-        //        sb.AppendFormat($"<h5>{each.Name} : {each.Description}</h5>" +
-        //                        "<h5>Nội dung bài học</h5>" +
-        //                        $"<span>{each.Detail}</span>" +
-        //                        "-------------------------------------");
-        //    }
-        //    sb.Append("</div>");
-        //    return sb.ToString();
-        //}
         protected void btnInserLesson(object sender, EventArgs e)
         {
             string idclass = Request.QueryString["id"];

@@ -20,21 +20,9 @@
         <label class="hidden">Nội dung</label>
         <input type="text" name="detail" class="hidden">
         <button runat="server" class="hidden" onserverclick="btnInserLesson">Thêm bài học</button>
-        <%--        <asp:Button runat="server" OnClick="btnInserLesson" Text="Thêm bài học" class="hidden" />--%>
     </form>
     <div>
-        <asp:ListView ID="ListViewLesson" runat="server">
-            <ItemTemplate>
-                <div class="each-class">
-                    <h5><%# Eval("Name") %> : <%# Eval("Description") %></h5>
-                    <h5>Nội dung bài học</h5>
-                    <span><%# Eval("Detail") %></span>
-                    <br />
-                    <span>-----------------------------------------------</span>
-                </div>
-            </ItemTemplate>
-        </asp:ListView>
-        <asp:XmlDataSource ID="XmlLesson" runat="server" DataFile="~/Data/Lesson.xml"></asp:XmlDataSource>
+        <% GetListLesson(); %>
     </div>
     <script type="text/javascript">
         function ShowHide(el) {

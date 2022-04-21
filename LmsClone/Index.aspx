@@ -69,19 +69,7 @@
             <h1>Danh sách lớp học do bạn quản lý.</h1>
         </div>
         <div style="width: 100%; height: 90%; margin-left: 3%;">
-            <asp:ListView ID="ListViewClass1" runat="server">
-                <ItemTemplate>
-                    <div class="each-class">
-                        <a href="DetailClass.aspx?id=<%# Eval("Id")%>">
-                            <img src="./img/book.jpg" class="class-img" alt="" />
-                            <h5>Lớp:  <%# Eval("Name") %></h5>
-                            <h5>GV: <%# Eval("Usernameadmin") %></h5>
-                            <h5>Mô tả: <%# Eval("Description") %></h5>
-                        </a>
-                    </div>
-                </ItemTemplate>
-            </asp:ListView>
-            <asp:XmlDataSource ID="XmlClassAdmin" runat="server"></asp:XmlDataSource>
+            <% GetListClass(); %>
         </div>
     </div>
     <div id="bot_student" runat="server">
@@ -89,19 +77,7 @@
             <h1>Danh sách lớp học</h1>
         </div>
         <div style="width: 100%; height: 90%; margin-left: 3%;">
-            <asp:ListView ID="ListViewClass2" runat="server">
-                <ItemTemplate>
-                    <div class="each-class">
-                        <a href="DetailClass.aspx?id=<%# Eval("Id")%>">
-                            <img src="./img/book.jpg" class="class-img" alt="" />
-                            <h5>Lớp:  <%# Eval("Name") %></h5>
-                            <h5>GV: <%# Eval("Usernameadmin") %></h5>
-                            <h5>Mô tả: <%# Eval("Description") %></h5>
-                        </a>
-                    </div>
-                </ItemTemplate>
-            </asp:ListView>
-            <asp:XmlDataSource ID="XmlClassStudent" runat="server"></asp:XmlDataSource>
+            <% GetListClass(); %>
         </div>
     </div>
 </asp:Content>
