@@ -36,11 +36,6 @@
             color: black;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
         .each-class {
             width: 30%;
             height: 50%;
@@ -58,6 +53,18 @@
         .class-img {
             width: 100%;
             height: 60%;
+        }
+        @media (max-width:767px) {
+            .each-class {
+            width: 46%;
+            height: 50%;
+            }
+            h1{
+                font-size:6vw;
+            }
+            h5{
+                font-size:3vw;
+            }
         }
     </style>
 </asp:Content>

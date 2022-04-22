@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Trang chủ</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+    <%--<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>--%>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <style>
         * {
@@ -126,6 +127,20 @@
         li.drop-down > a:hover + .drop-down-ul {
             display: block;
         }
+
+        a.toggle-menu {
+            position: absolute;
+            right: 0px;
+            padding: 20px;
+            font-size: 27px;
+            background-color: #ccc;
+            color: #23364B;
+            top: 0px;
+        }
+
+        .visible-xs-block {
+            display: none !important;
+        }
         /*responsive*/
         @media (min-width:767px) {
             .exo-menu > li > a {
@@ -139,7 +154,6 @@
         }
 
         @media (max-width:767px) {
-
             .exo-menu {
                 min-height: 58px;
                 background-color: #23364B;
@@ -163,7 +177,27 @@
             li.drop-down > ul {
                 position: relative;
             }
+
+            .visible-xs-block {
+                display: block !important
+            }
+                        #div-all > #bot {
+                height: 40%;
+            }
+            #bot {
+                display: block!important;
+                width: 100%;
+                height: 20%;
+                background-color: gray;
+            }
+
+            .footer {
+                /*display: inline;*/
+                float: left;
+                margin: 2% 15%;
+            }
         }
+
         /* CSS BOT*/
         #center {
             height: 65%;
@@ -171,15 +205,14 @@
         }
 
         #bot {
+            display: flex;
             width: 100%;
             height: 20%;
             background-color: gray;
         }
 
         .footer {
-            display: inline;
-            float: left;
-            margin: 1% 10% 10% 5%;
+            margin: 2% 5%;
         }
     </style>
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -226,7 +259,7 @@
                             </li>
                         </ul>
                     </li>
-
+                    <a href="#" class="toggle-menu visible-xs-block">|||</a>
                 </ul>
             </div>
             <div id="center">
@@ -281,4 +314,14 @@
         </div>
     </form>
 </body>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script type="text/javascript">
+    $(function () {
+        $('.toggle-menu').click(function () {
+            $('.exo-menu').toggleClass('display');
+
+        });
+
+    });
+</script>
 </html>
