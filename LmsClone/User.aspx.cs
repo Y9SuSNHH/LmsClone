@@ -11,6 +11,11 @@ namespace LmsClone
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            user_info.Visible = true;
+            if (!String.IsNullOrEmpty((string)Session["loginadmin"]))
+            {
+                user_info.Visible = false;
+            }
         }
         public void GetUser()
         {
@@ -18,14 +23,17 @@ namespace LmsClone
             if (Session["loginadmin"] == "true")
             {
                 Response.Write("<h5>Giáo viên: </h5>" + Session["name"]);
+                Response.Write("<h5>Tài khoản: </h5>" + Session["username"] +
+                                "<h5>Email: </h5>" + Session["email"] +
+                                "<br>-------------------------------------");
             }
             else if (Session["loginstudent"] == "true")
             {
                 Response.Write("<h5>Sinh viên: </h5>" + Session["name"]);
+                Response.Write("<h5>Tài khoản: </h5>" + Session["username"] +
+                                "<h5>Email: </h5>" + Session["email"] +
+                                "<br>-------------------------------------");
             }
-            Response.Write("<h5>Tài khoản: </h5>" + Session["username"]+
-                "<h5>Email: </h5>" + Session["email"] +
-                "<br>-------------------------------------");
         }
     }
 }

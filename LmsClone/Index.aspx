@@ -7,7 +7,7 @@
             color: #fff;
         }
 
-        #ContentPlaceHolder1_bot_admin {
+/*        #ContentPlaceHolder1_bot_admin {
             width: 80%;
             height: 90%;
             margin: 0 auto;
@@ -20,6 +20,17 @@
         }
 
         #ContentPlaceHolder1_bot_student {
+            width: 80%;
+            height: 90%;
+            margin: 0 auto;
+            margin-top: 2%;
+            padding: 3% 3% 5% 3%;
+            border-top: solid 1px #e5e5e5;
+            background-color: rgba(214,228,215,0.2);
+            box-shadow: 0px 0px 15px 1px #d1d1d1;
+            border-radius: 10px;
+        }      */  
+        #ContentPlaceHolder1_bot_class {
             width: 80%;
             height: 90%;
             margin: 0 auto;
@@ -71,7 +82,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div id="bot_admin" runat="server">
+<%--    <div id="bot_admin" runat="server">
         <div style="width: 100%; text-align: center; height: 10%;">
             <h1>Danh sách lớp học do bạn quản lý.</h1>
         </div>
@@ -86,5 +97,14 @@
         <div style="width: 100%; height: 90%; margin-left: 3%;">
             <% GetListClass(); %>
         </div>
+    </div>--%>
+        <div id="bot_class" runat="server">
+        <div style="width: 100%; text-align: center; height: 10%;">
+            <h1>Danh sách lớp học</h1>
+        </div>
+        <div style="width: 100%; height: 90%; margin-left: 3%;">
+            <% GetListClass(); %>
+        </div>
     </div>
+
 </asp:Content>

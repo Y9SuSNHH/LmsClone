@@ -15,21 +15,12 @@ namespace LmsClone
     {
 
         /// <summary>
-        /// bot_admin control.
+        /// bot_class control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl bot_admin;
-
-        /// <summary>
-        /// bot_student control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl bot_student;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl bot_class;
     }
 }

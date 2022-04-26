@@ -141,7 +141,7 @@
         .visible-xs-block {
             display: none !important;
         }
-        /*responsive*/
+
         @media (min-width:767px) {
             .exo-menu > li > a {
                 display: block;
@@ -179,22 +179,7 @@
             }
 
             .visible-xs-block {
-                display: block !important
-            }
-                        #div-all > #bot {
-                height: 40%;
-            }
-            #bot {
-                display: block!important;
-                width: 100%;
-                height: 20%;
-                background-color: gray;
-            }
-
-            .footer {
-                /*display: inline;*/
-                float: left;
-                margin: 2% 15%;
+                display: block !important;
             }
         }
 
@@ -240,12 +225,6 @@
                         </a>
                         <ul class="drop-down-ul animated fadeIn">
                             <li><a href="Class.aspx">Thêm lớp</a></li>
-                            <li>
-                                <a href="#">Sửa lớp</a>
-                            </li>
-                            <li>
-                                <a href="#">Xóa lớp</a>
-                            </li>
                         </ul>
                     </li>
                     <li id="user-menu" class="drop-down">
@@ -254,7 +233,7 @@
                         </a>
                         <ul class="drop-down-ul animated fadeIn">
                             <li><a href="User.aspx">Thông tin tài khoản</a></li>
-                            <li>
+                            <li runat="server" id="signout_admin">
                                 <a onserverclick="SignoutClick" runat="server">Đăng xuất</a>
                             </li>
                         </ul>

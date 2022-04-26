@@ -65,6 +65,16 @@
             justify-content: center;
             align-items: center;
         }
+
+/*        @media (max-width:767px) {
+            .form {
+                width: 70%;
+                height: 50%;
+            }
+            input {
+                width: 98%;
+            }
+        }*/
     </style>
 </head>
 <body>

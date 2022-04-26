@@ -12,16 +12,16 @@ namespace LmsClone
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            bot_admin.Visible = false;
-            bot_student.Visible = false;
-            if (Session["loginadmin"] == "true")
-            {
-                bot_admin.Visible = true;
-            }
-            else if (Session["loginstudent"] == "true")
-            {
-                bot_student.Visible = true;
-            }
+            //bot_admin.Visible = false;
+            //bot_student.Visible = false;
+            //if (Session["loginadmin"] == "true")
+            //{
+            //    bot_admin.Visible = true;
+            //}
+            //else if (Session["loginstudent"] == "true")
+            //{
+            //    bot_student.Visible = true;
+            //}
         }
         public void GetListClass()
         {
@@ -41,6 +41,14 @@ namespace LmsClone
 
             }
             else if (Session["loginstudent"] == "true")
+            {
+                foreach (Model.ClassObject each in Class)
+                {
+                    Classfilter.Add(each);
+                }
+
+            }
+            else
             {
                 foreach (Model.ClassObject each in Class)
                 {
